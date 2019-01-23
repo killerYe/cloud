@@ -1,0 +1,14 @@
+server:
+  port: 8260
+spring:
+  application:
+    name: servicediscover
+eureka:
+  instance:
+    hostname: sdpeer1
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://chain:123456@sdpeer2:8262/eureka, http://chain:123456@sdpeer3:8263/eureka
+       

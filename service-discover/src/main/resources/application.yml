@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: servicediscover
+  security:
+    user:
+      name: chain
+      password: 123456
+server:
+  port: 8260
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://chain:123456@${eureka.instance.hostname}:${server.port}/eureka
+  server:
+    wait-time-in-ms-when-sync-empty: 5
