@@ -1,0 +1,19 @@
+server:
+  port: 2100
+spring:
+  application:
+    name: userservice
+  cloud:
+    config:
+      profile: default
+      discovery:
+        enabled: true
+        service-id: configserver
+      username: chain
+      password: 123456
+eureka:
+  client:
+    service-url:
+      defaultZone: http://chain:123456@localhost:8260/eureka
+encrypt:
+  key: chain_key
