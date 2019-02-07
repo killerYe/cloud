@@ -1,10 +1,10 @@
 server:
   port: 8888
 spring:
-  security:
-    user:
-      name: chain
-      password: 123456
+#  security:
+#    user:
+#      name: chain
+#      password: 123456
   application:
     name: configserver
   cloud:
@@ -16,9 +16,24 @@ spring:
           password: 19971203yxw
         encrypt:
           enabled: false
+    bus:
+      enabled: true
+      refresh:
+        enabled: true
+      trace:
+        enabled: true
 #encrypt:
 #  key: chain_key
 eureka:
   client:
     service-url:
       defaultZone: http://chain:123456@localhost:8260/eureka
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info,bus-refresh
+
+
