@@ -1,6 +1,10 @@
 server:
   port: 2100
 spring:
+  security:
+    user:
+      name: chain
+      password: 123456
   application:
     name: userservice
   cloud:
